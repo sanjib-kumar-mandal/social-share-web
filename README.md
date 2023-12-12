@@ -17,7 +17,7 @@
 
 ## Instalation
 ```
-$ npm install web-social-share
+$ npm install social-share OR npm install 'path to your location'
 ```
 ## Getting Started
 Both `show` and `hide` methods are published.
