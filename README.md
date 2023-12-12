@@ -31,6 +31,15 @@ Clears the modal from the `DOM`
 ### Example
 
 ```javascript
+import { 
+    SocialShare, SocialMedia, 
+    FacebookAttributes, LinkedinAttributes, 
+    WhatsappAttributes, PinterestAttributes, 
+    RedditAttributes, TwitterAttributes,
+    HackerNewsAttributes, DSCVRAttributes, 
+    OpenChatAttributes, TelegramAttributes, 
+    EmailAttributes 
+} from 'social-share';
 openShare() {
         const shareObj = new SocialShare();
         shareObj.show({
