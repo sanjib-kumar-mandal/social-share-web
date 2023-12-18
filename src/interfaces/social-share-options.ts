@@ -1,10 +1,10 @@
-import { DSCVRAttributes, EmailAttributes, FacebookAttributes, HackerNewsAttributes, LinkedinAttributes, OpenChatAttributes, PinterestAttributes, RedditAttributes, TelegramAttributes, TwitterAttributes, WhatsappAttributes } from "./attributes";
+import { DSCVRAttributes, EmailAttributes, FacebookAttributes, HackerNewsAttributes, LineAttributes, LinkedinAttributes, OpenChatAttributes, PinterestAttributes, RedditAttributes, TelegramAttributes, TumblerAttributes, TwitterAttributes, WhatsappAttributes } from "./attributes";
 
 export interface SocialShareOptions {
     doc: Document;
     title: string;
     message: string;
-    socials: Array<SocialMedias>;
+    socials?: SocialMedias;
     copy?: CopyOption;
 }
 
@@ -16,14 +16,19 @@ interface CopyOption {
 }
 
 export interface SocialMedias {
-    icon?: string;
-    type: SocialMedia;
-    style?: {
-        color?: string;
-        background?: string;
-    },
-    attributes: FacebookAttributes | LinkedinAttributes | PinterestAttributes | RedditAttributes | TwitterAttributes | WhatsappAttributes | DSCVRAttributes | HackerNewsAttributes | OpenChatAttributes | TelegramAttributes | EmailAttributes;
-    target?: '_self' | '_blank';
+    [SocialMedia.Dscvr]?: DSCVRAttributes;
+    [SocialMedia.Email]?: EmailAttributes;
+    [SocialMedia.Facebook]?: FacebookAttributes;
+    [SocialMedia.HackerNews]?: HackerNewsAttributes;
+    [SocialMedia.Line]?: LineAttributes;
+    [SocialMedia.LinkedIn]?: LinkedinAttributes;
+    [SocialMedia.OpenChat]?: OpenChatAttributes;
+    [SocialMedia.Pinterest]?: PinterestAttributes;
+    [SocialMedia.Reddit]?: RedditAttributes;
+    [SocialMedia.Telegram]?: TelegramAttributes;
+    [SocialMedia.Tumbler]?: TumblerAttributes;
+    [SocialMedia.Twitter]?: TwitterAttributes;
+    [SocialMedia.Whatsapp]?: WhatsappAttributes;
 }
 
 export enum SocialMedia {

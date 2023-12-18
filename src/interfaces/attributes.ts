@@ -1,3 +1,8 @@
+interface Styles {
+    [key: string]: string;
+}
+
+export type Target = '_blank' | '_self';
 export interface FacebookAttributes {
     type: 'feed' | 'share' | 'send';
     appId?: string;
@@ -12,6 +17,8 @@ export interface FacebookAttributes {
     quote?: string;
     mobileIframe?: any;
     hashtags?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface LinkedinAttributes {
@@ -19,18 +26,24 @@ export interface LinkedinAttributes {
     title?: string;
     description?: string;
     source?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface PinterestAttributes {
     media?: string;
     description?: string;
     url?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface RedditAttributes {
     subReddit?: string;
     url?: string;
     title?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface TwitterAttributes {
@@ -38,11 +51,15 @@ export interface TwitterAttributes {
     via?: string;
     text?: string;
     hashtags?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface WhatsappAttributes {
     url?: string;
     text?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface DSCVRAttributes {
@@ -50,21 +67,29 @@ export interface DSCVRAttributes {
     text?: string;
     title?: string;
     portal?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface HackerNewsAttributes {
     url?: string;
     text?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface OpenChatAttributes {
     url?: string;
     text?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface TelegramAttributes {
     text?: string;
     url?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface EmailAttributes {
@@ -73,12 +98,18 @@ export interface EmailAttributes {
     subject?: string;
     cc?: string;
     bcc?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface LineAttributes {
     url?: string;
+    style?: Styles;
+    target?: Target;
 }
 
 export interface TumblerAttributes {
     canonicalUrl?: string;
+    style?: Styles;
+    target?: Target;
 }

@@ -24,18 +24,18 @@ class SocialShare {
             const doc = options.doc;
             if (doc) {
                 const socials = options.socials;
-                if (socials?.length) {
+                if (socials && Object.keys(socials).length) {
                     const layer = this.getLayer(doc);
                     const container = this.getContainer(doc, options.title, options.message);
                     const shareButtonsContainer = this.socialListContainer(doc);
-                    for (let i = 0, l = socials.length; i < l; i++) {
-                        const social = socials[i];
-                        const hasSocial = allNetworks.indexOf(social.type);
+                    Object.keys(socials).forEach((el: string) => {
+                        const element = el as unknown as SocialMedia;
+                        const hasSocial = allNetworks.indexOf(element);
                         if (hasSocial !== -1) {
-                            const icon = this.getIcon(doc, social);
+                            const icon = this.getIcon(doc, element, socials[element]);
                             icon && shareButtonsContainer.appendChild(icon);
                         }
-                    }
+                    });
                     container.appendChild(shareButtonsContainer);
                     if (options.hasOwnProperty('copy') && options.copy) {
                         const copyContainer = this.addCopyOption(doc, options.copy);
@@ -61,49 +61,50 @@ class SocialShare {
         }
     }
 
-    private share(doc: Document, info: SocialMedias) {
+    private share(doc: Document, type: SocialMedia, attributes: any) {
         let url;
-        if (info.type === SocialMedia.Facebook) {
-            url = Facebook.generateUrl(doc, info.attributes as FacebookAttributes);
-        } else if (info.type === SocialMedia.LinkedIn) {
-            url = LinkedIn.generateUrl(doc, info.attributes as LinkedinAttributes);
-        } else if (info.type === SocialMedia.Pinterest) {
-            url = Pinterest.generateUrl(doc, info.attributes as PinterestAttributes);
-        } else if (info.type === SocialMedia.Reddit) {
-            url = Reddit.generateUrl(doc, info.attributes as RedditAttributes);
-        } else if (info.type === SocialMedia.Twitter) {
-            url = Twitter.generateUrl(doc, info.attributes as TwitterAttributes);
-        } else if (info.type === SocialMedia.Whatsapp) {
-            url = WhatsApp.generateUrl(doc, info.attributes as WhatsappAttributes);
-        } else if (info.type === SocialMedia.Dscvr) {
-            url = DSCVR.generateUrl(doc, info.attributes as DSCVRAttributes);
-        } else if (info.type === SocialMedia.HackerNews) {
-            url = HackerNews.generateUrl(doc, info.attributes as HackerNewsAttributes);
-        } else if (info.type === SocialMedia.OpenChat) {
-            url = OpenChat.generateUrl(doc, info.attributes as OpenChatAttributes);
-        } else if (info.type === SocialMedia.Telegram) {
-            url = Telegram.generateUrl(doc, info.attributes as TelegramAttributes);
-        } else if (info.type === SocialMedia.Email) {
-            url = Email.generateUrl(info.attributes as EmailAttributes);
-        } else if (info.type === SocialMedia.Line) {
-            url = Line.generateUrl(doc, info.attributes as LineAttributes);
-        } else if (info.type === SocialMedia.Tumbler) {
-            url = Tumbler.generateUrl(doc, info.attributes as TumblerAttributes);
+        console.log(attributes);
+        if (type === SocialMedia.Facebook) {
+            url = Facebook.generateUrl(doc, attributes as FacebookAttributes);
+        } else if (type === SocialMedia.LinkedIn) {
+            url = LinkedIn.generateUrl(doc, attributes as LinkedinAttributes);
+        } else if (type === SocialMedia.Pinterest) {
+            url = Pinterest.generateUrl(doc, attributes as PinterestAttributes);
+        } else if (type === SocialMedia.Reddit) {
+            url = Reddit.generateUrl(doc, attributes as RedditAttributes);
+        } else if (type === SocialMedia.Twitter) {
+            url = Twitter.generateUrl(doc, attributes as TwitterAttributes);
+        } else if (type === SocialMedia.Whatsapp) {
+            url = WhatsApp.generateUrl(doc, attributes as WhatsappAttributes);
+        } else if (type === SocialMedia.Dscvr) {
+            url = DSCVR.generateUrl(doc, attributes as DSCVRAttributes);
+        } else if (type === SocialMedia.HackerNews) {
+            url = HackerNews.generateUrl(doc, attributes as HackerNewsAttributes);
+        } else if (type === SocialMedia.OpenChat) {
+            url = OpenChat.generateUrl(doc, attributes as OpenChatAttributes);
+        } else if (type === SocialMedia.Telegram) {
+            url = Telegram.generateUrl(doc, attributes as TelegramAttributes);
+        } else if (type === SocialMedia.Email) {
+            url = Email.generateUrl(attributes as EmailAttributes);
+        } else if (type === SocialMedia.Line) {
+            url = Line.generateUrl(doc, attributes as LineAttributes);
+        } else if (type === SocialMedia.Tumbler) {
+            url = Tumbler.generateUrl(doc, attributes as TumblerAttributes);
         }
-        url && openWindow(doc, url, info.target);
+        url && openWindow(doc, url, attributes.target ?? '_blank');
         this.hide(doc);
     }
 
-    private getIcon(doc: Document, info: SocialMedias) {
+    private getIcon(doc: Document, type: SocialMedia, info: any) {
         if (doc && info) {
             const div = doc.createElement('div');
-            div.setAttribute('class', info.type);
+            div.setAttribute('class', type);
             div.style.display = 'flex';
             div.style.alignItems = 'center';
             div.style.justifyContent = 'center';
 
             const div1 = doc.createElement('div');
-            div1.style.border = `2px solid ${info.style?.color ?? Colors[info.type]+'46'}`;
+            div1.style.border = `2px solid ${info.style?.color ?? Colors[type]+'46'}`;
             div1.style.padding = '10px';
             div1.style.cursor = 'pointer';
             div1.style.borderRadius = '50%';
@@ -115,9 +116,9 @@ class SocialShare {
             div1.style.justifyContent = 'center';
     
             const svg = doc.createElement('img');
-            svg.setAttribute('src', info.icon ?? DefaultIcons[info.type]);
+            svg.setAttribute('src', info.icon ?? DefaultIcons[type]);
             svg.loading = 'lazy';
-            svg.alt = Titles[info.type];
+            svg.alt = Titles[type];
             svg.style.height = '27px';
             svg.style.width = '30px';
             svg.style.transition = '.5s';
@@ -125,7 +126,7 @@ class SocialShare {
             svg.style.borderRadius = '5px';
             div1.appendChild(svg);
 
-            div1.addEventListener('click', () => this.share(doc, info));
+            div1.addEventListener('click', () => this.share(doc, type, info));
 
             div.appendChild(div1);
     
