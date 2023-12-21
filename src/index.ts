@@ -1,4 +1,4 @@
-import { SocialMedias, SocialShareOptions } from "./interfaces/social-share-options";
+import { SocialShareOptions } from "./interfaces/social-share-options";
 import { SocialMedia } from './interfaces/social-share-options';
 import { Colors, DefaultIcons, Titles, allNetworks } from "./constatnts/const";
 import { Facebook } from "./share-links/facebook";
@@ -150,13 +150,13 @@ class SocialShare {
                 h2.style.color = '#9b9b9b';
                 h2.style.margin = '20px 0 0 0';
                 h2.style.fontSize = '14px';
-                h2.style.fontWeight = 'bold';
+                h2.style.fontWeight = '400';
                 div1.appendChild(h2);
 
                 const div = doc.createElement('div');
                 div.style.display = 'flex';
                 div.style.alignItems = 'center';
-                div.style.border = '2px solid rgba(128, 128, 128, .4)';
+                div.style.border = '1px solid rgba(128, 128, 128, .4)';
                 div.style.padding = '5px';
                 div.style.borderRadius = '3px';
                 div.style.overflow = 'hidden';
@@ -168,7 +168,7 @@ class SocialShare {
                 p.style.overflow = 'hidden';
                 p.style.fontSize = '15px';
                 p.style.width = 'calc(100% - 80px)';
-                p.style.margin = '0 10px 0 10px';
+                p.style.margin = '0px 10px 0px 5px';
                 p.innerText = copyOptions.url;
                 div.appendChild(p);
                 const button = doc.createElement('button');
@@ -176,13 +176,17 @@ class SocialShare {
                 button.style.color = 'white';
                 button.style.border = 'none';
                 button.style.borderRadius = '3px';
-                button.style.width = '80px';
+                button.style.width = '70px';
                 button.style.padding = '10px';
-                button.style.fontSize = '12px';
-                button.innerText = 'copy';
+                button.style.fontSize = '11px';
+                button.innerText = 'Copy';
                 button.style.cursor = 'pointer';
                 button.style.textTransform = 'uppercase';
-                button.addEventListener('click', () => doc.defaultView?.navigator.clipboard.writeText(copyOptions.url));
+                button.addEventListener('click', () => {
+                    doc.defaultView?.navigator.clipboard.writeText(copyOptions.url);
+                    button.innerText = 'Copied!';
+                    setTimeout(() => this.hide(doc), 1000);
+                });
                 div.appendChild(button);
                 div1.appendChild(div);
                 return div1;
@@ -217,17 +221,19 @@ class SocialShare {
             if (doc) {
                 const div = doc.createElement('div');
                 div.style.display = 'flex';
+                div.style.alignItems = 'center';
                 div.style.flexDirection = 'row';
-                div.style.padding = '15px 0';
-                div.style.borderBottom = '2px solid rgba(181, 181, 181, .43)';
+                div.style.padding = '5px 0px 15px';
+                div.style.borderBottom = '1px solid rgba(181, 181, 181, .43)';
                 div.style.marginBottom = '10px';
                 div.classList.add('social-share-title');
                 const titleC = doc.createElement('h1');
                 if (title) titleC.innerText = title;   
-                titleC.style.fontSize = '20px';
+                titleC.style.fontSize = '18px';
                 titleC.style.fontWeight = '600';
                 titleC.style.margin = '0px';
                 titleC.style.width = 'calc(100% - 25px)';
+                titleC.style.color = '#292826';
                 div.appendChild(titleC);
                 const span = doc.createElement('span');
                 span.style.display = 'flex';
@@ -236,10 +242,10 @@ class SocialShare {
                 span.style.width = '25px';
                 span.style.height = '25px';
                 span.style.color = '#f5f5f5';
-                span.style.fontSize = '12px';
+                span.style.fontSize = '10px';
                 span.style.borderRadius = '50%';
                 span.style.cursor = 'pointer';
-                span.style.background = '#F44336';
+                span.style.background = '#ff655a';
                 span.classList.add('close-button');
                 span.innerHTML = '&#10006;';
                 span.addEventListener('click', () => this.hide(doc));
@@ -259,8 +265,8 @@ class SocialShare {
                 const messageC = doc.createElement('p');
                 messageC.innerText = message;
                 messageC.classList.add('social-share-message');
-                messageC.style.fontSize = '16px';
-                messageC.style.fontWeight = '600';
+                messageC.style.fontSize = '13px';
+                messageC.style.fontWeight = '400';
                 messageC.style.color = '#9b9b9b';
                 messageC.style.margin = '10px 0 0';
                 return messageC;
@@ -279,8 +285,9 @@ class SocialShare {
                 container.classList.add("social-share-container");
                 container.style.width = '320px';
                 container.style.height = 'auto';
-                container.style.background = '#d9d9d9';
+                container.style.background = '#f5f5f5';
                 container.style.borderRadius = '3px';
+                container.style.borderBottom = '4px solid #2196F3';
                 container.style.padding = '10px';
                 const titleC = this.getTitle(doc, title);
                 container.appendChild(titleC);
@@ -301,6 +308,7 @@ class SocialShare {
         try { 
             if (doc) {
                 const div = doc.createElement('div');
+                // div.attachShadow({mode: 'open'})
                 div.classList.add("social-share-layer");
                 div.setAttribute('id', 'social-share-layer');
                 div.style.zIndex = '999999';
@@ -324,19 +332,4 @@ class SocialShare {
 
 }
 
-export {
-    SocialMedia,
-    SocialShare,
-    FacebookAttributes,
-    LinkedinAttributes,
-    PinterestAttributes,
-    RedditAttributes,
-    TwitterAttributes,
-    WhatsappAttributes,
-    DSCVRAttributes,
-    HackerNewsAttributes,
-    OpenChatAttributes,
-    TelegramAttributes,
-    EmailAttributes,
-    LineAttributes
-};
+export { SocialMedia, SocialShare };
