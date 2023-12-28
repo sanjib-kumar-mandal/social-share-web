@@ -6,7 +6,7 @@ export class HackerNews {
     let urlString = "https://news.ycombinator.com/submitlink?u=";
 
     //default to the current page if a URL isn't specified
-    urlString += shareEncodedUrl(doc, options.url);
+    urlString += shareEncodedUrl(doc, options.url ?? doc.URL);
 
     if (options.text) {
       urlString += "&t=" + encodeURIComponent(options.text);

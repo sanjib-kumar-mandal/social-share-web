@@ -5,7 +5,7 @@ export class Telegram {
   static generateUrl(doc: Document, options: TelegramAttributes) {
     let urlString: string = `https://t.me/share/url?url=${shareEncodedUrl(
       doc,
-      options.url,
+      options.url ?? doc.URL,
     )}`;
 
     if (options.text) {

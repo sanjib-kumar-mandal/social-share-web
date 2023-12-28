@@ -81,7 +81,7 @@ class SocialShare {
     }
   };
 
-  private share(
+  share(
     doc: Document,
     type: SocialMedia,
     attributes: SocialMedias[SocialMedia],

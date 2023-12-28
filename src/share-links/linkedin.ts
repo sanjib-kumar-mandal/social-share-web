@@ -6,7 +6,7 @@ export class LinkedIn {
     if (options.url) {
       let urlString = "https://www.linkedin.com/shareArticle?mini=true";
 
-      urlString += "&url=" + shareEncodedUrl(doc, options.url);
+      urlString += "&url=" + shareEncodedUrl(doc, options.url ?? doc.URL);
 
       if (options.title) {
         urlString += "&title=" + encodeURIComponent(options.title);

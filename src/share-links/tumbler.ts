@@ -5,7 +5,7 @@ export class Tumbler {
   static generateUrl(doc: Document, options: TumblerAttributes) {
     return `http://tumblr.com/widgets/share/tool?canonicalUrl=${shareEncodedUrl(
       doc,
-      options.canonicalUrl,
+      options.canonicalUrl ?? doc.URL,
     )}`;
   }
 }

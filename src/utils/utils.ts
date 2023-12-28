@@ -1,8 +1,7 @@
 export const shareEncodedUrl = (
   doc: Document,
   socialShareUrl?: string,
-): string =>
-  encodeURIComponent(socialShareUrl ?? doc.defaultView?.location.href ?? "");
+): string => encodeURIComponent(socialShareUrl ?? doc.URL ?? "");
 
 // Same implementation as in class @deckdeckgo/utils
 export const isMobile = (doc: Document): boolean => {

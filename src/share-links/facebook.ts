@@ -41,7 +41,7 @@ export class Facebook {
         urlString += "&redirect_uri=" + encodeURIComponent(options.redirectUri);
       }
       if (options.href) {
-        urlString += "&href=" + shareEncodedUrl(doc, options.href);
+        urlString += "&href=" + shareEncodedUrl(doc, options.href ?? doc.URL);
       }
       if (options.quote) {
         urlString += "&quote=" + encodeURIComponent(options.quote);

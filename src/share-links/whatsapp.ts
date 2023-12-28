@@ -12,7 +12,7 @@ export class WhatsApp {
       urlString += encodeURIComponent(options.text) + "%0A";
     }
     //default to the current page if a URL isn't specified
-    urlString += shareEncodedUrl(doc, options.url);
+    urlString += shareEncodedUrl(doc, options.url ?? doc.URL);
 
     return urlString;
   }

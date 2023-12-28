@@ -5,7 +5,7 @@ export class DSCVR {
   static generateUrl(doc: Document, options: DSCVRAttributes) {
     let urlString: string = `https://dscvr.one/?url=${shareEncodedUrl(
       doc,
-      options.url,
+      options.url ?? doc.URL,
     )}`;
 
     if (options.text) {

@@ -5,7 +5,7 @@ export class OpenChat {
   static generateUrl(doc: Document, options: OpenChatAttributes) {
     let urlString: string = `https://oc.app/?url=${shareEncodedUrl(
       doc,
-      options.url,
+      options.url ?? doc.URL,
     )}`;
 
     if (options.text) {

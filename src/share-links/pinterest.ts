@@ -6,7 +6,7 @@ export class Pinterest {
     if (options.url) {
       let urlString: string = `https://www.pinterest.com/pin/create/button/?url=${shareEncodedUrl(
         doc,
-        options.url,
+        options.url ?? doc.URL,
       )}`;
 
       if (options.media) {
