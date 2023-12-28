@@ -2,16 +2,19 @@ import { OpenChatAttributes } from "../interfaces/attributes";
 import { shareEncodedUrl } from "../utils/utils";
 
 export class OpenChat {
-    static generateUrl(doc: Document, options: OpenChatAttributes) { 
-        let urlString: string = `https://oc.app/?url=${shareEncodedUrl(doc, options.url)}`;
+  static generateUrl(doc: Document, options: OpenChatAttributes) {
+    let urlString: string = `https://oc.app/?url=${shareEncodedUrl(
+      doc,
+      options.url,
+    )}`;
 
-        if (options.text) {
-            urlString += `&text=${encodeURIComponent(options.text)}`;
-        }
-
-        // openchat requires a suffix `#/share` to understand it is a share action
-        urlString += `#/share`;
-        
-        return urlString;
+    if (options.text) {
+      urlString += `&text=${encodeURIComponent(options.text)}`;
     }
+
+    // openchat requires a suffix `#/share` to understand it is a share action
+    urlString += `#/share`;
+
+    return urlString;
+  }
 }
