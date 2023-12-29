@@ -78,7 +78,7 @@ export class Facebook {
       }
       return urlString;
     } else {
-      return null;
+      return `https://www.facebook.com/sharer/sharer.php?u=${shareEncodedUrl(doc, options.href ?? doc.URL)}`;
     }
   }
 }

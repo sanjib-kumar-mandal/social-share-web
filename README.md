@@ -26,13 +26,17 @@ $ npm install social-share OR npm install 'path to your location'
 
 Both `show`, `hide` and `share` methods are published. So that you can directly share with the help of specified attributes.
 
-### show
+### show(options)
 
 Triggers the modal and needs to provide options for dynamic usage.
 
-### hide
+### hide(document)
 
 Clears the modal from the `DOM`
+
+### share(document, type, attributes)
+
+Execute directly 
 
 ### Example
 
