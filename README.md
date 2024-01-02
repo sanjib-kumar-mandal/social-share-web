@@ -127,13 +127,13 @@ close() {
 
 ## DOCUMENTs
 
-- Email: [Click Here](https://en.wikipedia.org/wiki/Mailto)
-- Facebook: [Click Here](https://developers.facebook.com/docs/sharing/reference/share-dialog)
-- Line: [Click Here](https://developers.line.biz/en/docs/line-social-plugins/install-guide/using-line-share-buttons/#using-custom-icons)
-- Hacker News: [Click Here](https://www.igzebedze.com/2012/08/howto-add-hacker-news-share-button-on-wordpress-com/)
-- LinkedIn: [Click Here](https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/share-api?view=li-lms-unversioned&tabs=http)
-- Reddit: [Click Here](https://www.reddit.com/submit?url={{some_url}})
-- Telegram: [Click Here](https://core.telegram.org/widgets/share)
-- Tumbler: [Click Here](https://www.tumblr.com/docs/en/share_button)
-- Twitter: [Click Here](https://developer.twitter.com/en/docs/twitter-for-websites/web-intents/overview)
-- Whatsapp: [Click Here](https://faq.whatsapp.com/425247423114725/?locale=en_US&cms_platform=iphone)
+- [Email](https://en.wikipedia.org/wiki/Mailto)
+- [Facebook](https://developers.facebook.com/docs/sharing/reference/share-dialog)
+- [Line](https://developers.line.biz/en/docs/line-social-plugins/install-guide/using-line-share-buttons/#using-custom-icons)
+- [Hacker News](https://www.igzebedze.com/2012/08/howto-add-hacker-news-share-button-on-wordpress-com/)
+- [LinkedIn](https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/share-api?view=li-lms-unversioned&tabs=http)
+- [Reddit](https://www.reddit.com/submit?url={{some_url}})
+- [Telegram](https://core.telegram.org/widgets/share)
+- [Tumbler](https://www.tumblr.com/docs/en/share_button)
+- [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/web-intents/overview)
+- [Whatsapp](https://faq.whatsapp.com/425247423114725/?locale=en_US&cms_platform=iphone)
