@@ -10,6 +10,7 @@
 - LinkedIn
 - Open Chat
 - Pinterest
+- Pocket
 - Reddit
 - Telegram
 - Tumbler
@@ -50,65 +51,45 @@ openShareModal() {
             doc: document,
             title: "Social Modal",
             message: "Share this link via",
-            socials: [
-                {
-                    type: SocialMedia.Facebook,
-                    attributes: {
+            socials: {
+                [SocialMedia.Facebook]: {
                         type: 'feed'
-                    }
-                }, {
-                    type: SocialMedia.LinkedIn,
-                    attributes: {
-                        url: window.location.href
-                    }
-                }, {
-                    type: SocialMedia.Whatsapp,
-                    attributes: {
-                        url: window.location.href,
-                        text: "Hi Sage Savas"
-                    }
-                }, {
-                    type: SocialMedia.Pinterest,
-                    attributes: {
-                        url: window.location.href
-                    }
-                }, {
-                    type: SocialMedia.Reddit,
-                    attributes: {
-                        url: window.location.href
-                    }
-                }, {
-                    type: SocialMedia.Twitter,
-                    attributes: {
-                        url: window.location.href
-                    }
-                }, {
-                    type: SocialMedia.Dscvr,
-                    attributes: {
-                        url: window.location.href
-                    }
-                }, {
-                    type: SocialMedia.HackerNews,
-                    attributes: {
-                        url: window.location.href
-                    }
-                }, {
-                    type: SocialMedia.OpenChat,
-                    attributes: {
-                        url: window.location.href
-                    }
-                }, {
-                    type: SocialMedia.Telegram,
-                    attributes: {
-                        url: window.location.href
-                    }
-                }, {
-                    type: SocialMedia.Email,
-                    attributes: {
-                        to: 'example@domain.com'
-                    }
+                },
+                [SocialMedia.LinkedIn]: {
+                    url: window.location.href
+                },
+                [SocialMedia.Whatsapp]: {
+                    url: window.location.href,
+                    text: "Hi Sage Savas"
+                },
+                [SocialMedia.Pinterest]: {
+                    url: window.location.href
+                },
+                [SocialMedia.Reddit]: {
+                    url: window.location.href
+                },
+                [SocialMedia.Twitter]: {
+                    url: window.location.href
+                },
+                [SocialMedia.Dscvr]: {
+                    url: window.location.href
+                },
+                [SocialMedia.HackerNews]: {
+                    url: window.location.href
+                },
+                [SocialMedia.OpenChat]: {
+                    url: window.location.href
+                },
+                [SocialMedia.Telegram]: {
+                    url: window.location.href
+                },
+                [SocialMedia.Email]: {
+                    to: 'example@domain.com'
+                },
+                [SocialMedia.Pocket]: {
+                    url: window.location.href
                 }
-            ],
+            },
             copy: {
                 url: 'https://www.domain.com',
                 text: 'Domain'
@@ -137,3 +118,4 @@ close() {
 - [Tumbler](https://www.tumblr.com/docs/en/share_button)
 - [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/web-intents/overview)
 - [Whatsapp](https://faq.whatsapp.com/425247423114725/?locale=en_US&cms_platform=iphone)
+- [Pocket](https://getpocket.com/publisher/button_docs)

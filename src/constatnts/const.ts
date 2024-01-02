@@ -14,6 +14,7 @@ export const allNetworks = [
   SocialMedia.Telegram,
   SocialMedia.Email,
   SocialMedia.Line,
+  SocialMedia.Pocket,
 ];
 
 export const Colors = {
@@ -29,7 +30,8 @@ export const Colors = {
   [SocialMedia.OpenChat]: "#1B1C21",
   [SocialMedia.Telegram]: "#8774E1",
   [SocialMedia.Email]: "#202124",
-  [SocialMedia.Line]: "",
+  [SocialMedia.Line]: "#07B53B",
+  [SocialMedia.Pocket]: "#E7132F",
 };
 
 export const Titles = {
@@ -46,6 +48,7 @@ export const Titles = {
   [SocialMedia.Telegram]: "Telegram",
   [SocialMedia.Email]: "Email",
   [SocialMedia.Line]: "Line",
+  [SocialMedia.Pocket]: "Pocket",
 };
 
 export const DefaultIcons = {
@@ -68,4 +71,5 @@ export const DefaultIcons = {
   [SocialMedia.Telegram]: "https://web.telegram.org/a/favicon.svg",
   [SocialMedia.Email]: "https://www.google.com/a/cpanel/images/favicon.ico",
   [SocialMedia.Line]: "https://line.me/favicon-32x32.png",
+  [SocialMedia.Pocket]: "https://www.mozilla.org/media/img/favicons/pocket/favicon-196x196.6e3096f93328.png",
 };

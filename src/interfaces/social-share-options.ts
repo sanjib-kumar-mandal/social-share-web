@@ -43,6 +43,7 @@ export interface SocialMedias {
   [SocialMedia.Tumbler]?: TumblerAttributes;
   [SocialMedia.Twitter]?: TwitterAttributes;
   [SocialMedia.Whatsapp]?: WhatsappAttributes;
+  [SocialMedia.Pocket]?: WhatsappAttributes;
 }
 
 export enum SocialMedia {
@@ -59,4 +60,5 @@ export enum SocialMedia {
   Twitter = "twitter",
   Whatsapp = "whatsapp",
   Email = "email",
+  Pocket = "pocket",
 }

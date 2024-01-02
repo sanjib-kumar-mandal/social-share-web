@@ -15,6 +15,7 @@ import {
   LinkedinAttributes,
   OpenChatAttributes,
   PinterestAttributes,
+  PocketAttributes,
   RedditAttributes,
   TelegramAttributes,
   TumblerAttributes,
@@ -33,6 +34,7 @@ import { Email } from "./share-links/email";
 import { openWindow } from "./utils/utils";
 import { Line } from "./share-links/line";
 import { Tumbler } from "./share-links/tumbler";
+import { Pocket } from "./share-links/pocket";
 
 class SocialShare {
   show = (options: SocialShareOptions) => {
@@ -113,6 +115,8 @@ class SocialShare {
       url = Line.generateUrl(doc, attributes as LineAttributes);
     } else if (type === SocialMedia.Tumbler) {
       url = Tumbler.generateUrl(doc, attributes as TumblerAttributes);
+    } else if (type === SocialMedia.Pocket) {
+      url = Pocket.generateUrl(doc, attributes as PocketAttributes);
     }
     url && openWindow(doc, url, attributes?.target ?? "_blank");
     this.hide(doc);

@@ -38,6 +38,12 @@ export interface PinterestAttributes {
   target?: Target;
 }
 
+export interface PocketAttributes {
+  url?: string;
+  style?: Styles;
+  target?: Target;
+}
+
 export interface RedditAttributes {
   subReddit?: string;
   url?: string;
