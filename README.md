@@ -42,9 +42,11 @@ Execute directly
 
 ```typescript
 import { SocialMedia, SocialShare } from 'social-share';
-openShare() {
-        const shareObj = new SocialShare();
-        shareObj.show({
+
+private readonly shareObj = new SocialShare();
+
+openShareModal() {
+        this.shareObj.show({
             doc: document,
             title: "Social Modal",
             message: "Share this link via",
@@ -113,4 +115,12 @@ openShare() {
             }
         });
     }
+
+directShare(doc: Document, type: SocialMedia, attributes: any) {
+    this.shareObj.share(doc, type, attributes);
+}
+
+close() {
+    this.shareObj.hide(doc: Document);
+}
 ```
