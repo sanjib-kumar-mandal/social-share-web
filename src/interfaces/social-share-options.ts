@@ -1,4 +1,5 @@
 import {
+  BufferAttributes,
   DSCVRAttributes,
   EmailAttributes,
   FacebookAttributes,
@@ -7,6 +8,7 @@ import {
   LinkedinAttributes,
   OpenChatAttributes,
   PinterestAttributes,
+  PocketAttributes,
   RedditAttributes,
   TelegramAttributes,
   TumblerAttributes,
@@ -43,7 +45,8 @@ export interface SocialMedias {
   [SocialMedia.Tumbler]?: TumblerAttributes;
   [SocialMedia.Twitter]?: TwitterAttributes;
   [SocialMedia.Whatsapp]?: WhatsappAttributes;
-  [SocialMedia.Pocket]?: WhatsappAttributes;
+  [SocialMedia.Pocket]?: PocketAttributes;
+  [SocialMedia.Buffer]?: BufferAttributes;
 }
 
 export enum SocialMedia {
@@ -61,4 +64,5 @@ export enum SocialMedia {
   Whatsapp = "whatsapp",
   Email = "email",
   Pocket = "pocket",
+  Buffer = "buffer",
 }

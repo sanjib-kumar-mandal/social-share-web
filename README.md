@@ -2,6 +2,7 @@
 
 ## Features
 
+- Buffer
 - DSCVR
 - Email
 - Facebook
@@ -88,6 +89,10 @@ openShareModal() {
                 },
                 [SocialMedia.Pocket]: {
                     url: window.location.href
+                },
+                [SocialMedia.Buffer]: {
+                    url: window.location.href,
+                    text: 'Something'
                 }
             },
             copy: {

@@ -15,6 +15,7 @@ export const allNetworks = [
   SocialMedia.Email,
   SocialMedia.Line,
   SocialMedia.Pocket,
+  SocialMedia.Buffer,
 ];
 
 export const Colors = {
@@ -32,6 +33,7 @@ export const Colors = {
   [SocialMedia.Email]: "#202124",
   [SocialMedia.Line]: "#07B53B",
   [SocialMedia.Pocket]: "#E7132F",
+  [SocialMedia.Buffer]: "#2C4BFF",
 };
 
 export const Titles = {
@@ -49,6 +51,7 @@ export const Titles = {
   [SocialMedia.Email]: "Email",
   [SocialMedia.Line]: "Line",
   [SocialMedia.Pocket]: "Pocket",
+  [SocialMedia.Buffer]: "Buffer",
 };
 
 export const DefaultIcons = {
@@ -72,4 +75,5 @@ export const DefaultIcons = {
   [SocialMedia.Email]: "https://www.google.com/a/cpanel/images/favicon.ico",
   [SocialMedia.Line]: "https://line.me/favicon-32x32.png",
   [SocialMedia.Pocket]: "https://www.mozilla.org/media/img/favicons/pocket/favicon-196x196.6e3096f93328.png",
+  [SocialMedia.Buffer]: "https://buffer.com/static/icons/buffer-icon.svg",
 };

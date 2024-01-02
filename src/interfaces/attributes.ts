@@ -30,6 +30,13 @@ export interface LinkedinAttributes {
   target?: Target;
 }
 
+export interface BufferAttributes {
+  url?: string;
+  text?: string;
+  style?: Styles;
+  target?: Target;
+}
+
 export interface PinterestAttributes {
   media?: string;
   description?: string;

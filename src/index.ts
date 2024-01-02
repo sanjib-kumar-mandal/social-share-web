@@ -7,6 +7,7 @@ import { Colors, DefaultIcons, Titles, allNetworks } from "./constatnts/const";
 import { Facebook } from "./share-links/facebook";
 import { LinkedIn } from "./share-links/linkedin";
 import {
+  BufferAttributes,
   DSCVRAttributes,
   EmailAttributes,
   FacebookAttributes,
@@ -35,6 +36,7 @@ import { openWindow } from "./utils/utils";
 import { Line } from "./share-links/line";
 import { Tumbler } from "./share-links/tumbler";
 import { Pocket } from "./share-links/pocket";
+import { Buffer } from "./share-links/buffer";
 
 class SocialShare {
   show = (options: SocialShareOptions) => {
@@ -117,6 +119,8 @@ class SocialShare {
       url = Tumbler.generateUrl(doc, attributes as TumblerAttributes);
     } else if (type === SocialMedia.Pocket) {
       url = Pocket.generateUrl(doc, attributes as PocketAttributes);
+    } else if (type === SocialMedia.Buffer) {
+      url = Buffer.generateUrl(doc, attributes as BufferAttributes);
     }
     url && openWindow(doc, url, attributes?.target ?? "_blank");
     this.hide(doc);
@@ -126,6 +130,7 @@ class SocialShare {
     if (doc && info) {
       const div = doc.createElement("div");
       div.setAttribute("class", type);
+      div.setAttribute('title', Titles[type] ?? '');
       div.style.display = "flex";
       div.style.alignItems = "center";
       div.style.justifyContent = "center";
@@ -319,7 +324,7 @@ class SocialShare {
         container.style.borderRadius = "3px";
         container.style.borderBottom = "4px solid #2196F3";
         container.style.padding = "10px";
-        const titleC = this.getTitle(doc, title);
+        const titleC = this.getTitle(doc, title ?? 'Share via');
         container.appendChild(titleC);
         if (message) {
           const messageC = this.getMessage(doc, message);
