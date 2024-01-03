@@ -1,14 +1,14 @@
 {
   "name": "social-share-web",
   "version": "0.0.1",
-  "description": "",
+  "description": "Social Share plugin is made from new UI perspective. Also for angular it takes care of SSR as it takes `document` as input. It can be used for all frameworks which uses typescript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build"
   },
-  "keywords": [],
+  "keywords": ["Social Share Web", "Typescript Social Share", "Social Share", "npm Social Share"],
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.0.4"
