@@ -1,5 +1,7 @@
 # Social Share
 
+Social Share plugin is made from new UI perspective. Also for angular it takes care of SSR as it takes `document` as input. It can be used for all frameworks which uses typescript.
+
 ## Features
 
 - Buffer
