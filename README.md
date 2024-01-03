@@ -23,7 +23,7 @@ Social Share plugin is made from new UI perspective. Also for angular it takes c
 ## Instalation
 
 ```
-$ npm install social-share
+$ npm install social-share-web
 ```
 
 ## Getting Started
