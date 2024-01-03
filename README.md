@@ -45,7 +45,7 @@ Execute directly
 ### Example
 
 ```typescript
-import { SocialMedia, SocialShare } from 'social-share';
+import { SocialMedia, SocialShare } from 'social-share-web';
 
 private readonly shareObj = new SocialShare();
 
