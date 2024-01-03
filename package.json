@@ -1,12 +1,9 @@
 {
   "name": "social-share",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "lib/"
-  ],
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build"
@@ -16,5 +13,13 @@
   "devDependencies": {
     "typescript": "^5.0.4"
   },
-  "author": "Sanjib Kumar Mandal<sanjib0248@gmail.com>"
+  "author": "Sanjib Kumar Mandal<sanjib0248@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanjib-kumar-mandal/social-share-web"
+  },
+  "bugs": {
+    "url": "https://github.com/sanjib-kumar-mandal/social-share-web/issues"
+  },
+  "homepage": "https://github.com/sanjib-kumar-mandal/social-share-web"
 }
